@@ -1,0 +1,100 @@
+{
+	"info": {
+		"_postman_id": "698ae5ed-3baa-4ce0-a528-9c9e5ef97211",
+		"name": "Million",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24563895",
+		"_collection_link": "https://crimson-water-101770.postman.co/workspace/DISSysTech~cd3600de-701d-4787-b31a-16b72f59d4e6/collection/24563895-698ae5ed-3baa-4ce0-a528-9c9e5ef97211?action=share&source=collection_link&creator=24563895"
+	},
+	"item": [
+		{
+			"name": "Properties",
+			"item": [
+				{
+					"name": "properties",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:7297/api/properties",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7297",
+							"path": [
+								"api",
+								"properties"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "properties/{id}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:7297/api/properties/68153f3e0633760e389bf9ce",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7297",
+							"path": [
+								"api",
+								"properties",
+								"68153f3e0633760e389bf9ce"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "properties/filter",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:7297/api/properties/filter?name=apa&address=cal&maxPrice=300000000&pageIndex=1&pageSize=6",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7297",
+							"path": [
+								"api",
+								"properties",
+								"filter"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "apa"
+								},
+								{
+									"key": "address",
+									"value": "cal"
+								},
+								{
+									"key": "maxPrice",
+									"value": "300000000"
+								},
+								{
+									"key": "pageIndex",
+									"value": "1"
+								},
+								{
+									"key": "pageSize",
+									"value": "6"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

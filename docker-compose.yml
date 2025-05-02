@@ -1,0 +1,43 @@
+services:
+  million-db:
+    image: mongo:6.0
+    container_name: million-db
+    environment:
+      MONGO_INITDB_DATABASE: MillionDb
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: admin123
+    restart: always
+    ports:
+      - "27017:27017"
+    volumes:
+      - million_mongodbdata:/data/db
+      
+  million-api:
+    container_name: million-api
+    build:
+      context: ./backend
+      dockerfile: src/Million.Web.API/Dockerfile
+    ports:
+      - "8080:80"
+    environment:
+      ASPNETCORE_ENVIRONMENT: "Development"
+      ASPNETCORE_URLS: "http://0.0.0.0:80"
+      MongoDbSettings__ConnectionString: "mongodb://admin:admin123@million-db:27017"
+      MongoDbSettings__DatabaseName: "MillionDb"
+      MongoDbSettings__PropertiesCollectionName: "Properties"
+      MongoDbSettings__ImagesCollectionName: "PropertyImages"
+    depends_on:
+      - million-db
+      
+  million-web:
+    container_name: million-web
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "5173:80"
+    depends_on:
+      - million-api
+      
+volumes:
+  million_mongodbdata:

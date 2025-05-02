@@ -1,0 +1,6 @@
+@Million.Web.API_HostAddress = http://localhost:5123
+
+GET {{Million.Web.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
