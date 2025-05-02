@@ -11,7 +11,7 @@ node_modules
 
 # Local env files
 # .env
-.env.*.local
+# .env.*.local
 *.local
 
 # Logs
@@ -39,7 +39,7 @@ _Migrations/
 
 # Secrets
 secrets.json
-*.env
+# *.env
 
 # IDE settings
 .vscode/
